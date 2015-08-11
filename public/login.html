@@ -1,0 +1,103 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <script src="/here/node_modules/react-bootstrap/dist/react-bootstrap.min.js">
+	</script>
+	<script>
+  		var Alert = ReactBootstrap.Alert;
+	</script>
+     </head>
+  <body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <div id="content"></div>
+    <script type="text/jsx">
+
+	var Navbar = ReactBootstrap.Navbar,
+	Nav = ReactBootstrap.Nav,
+	NavItem = ReactBootstrap.NavItem,
+	DropdownButton = ReactBootstrap.DropdownButton,
+	MenuItem = ReactBootstrap.MenuItem;
+	const navbarInstance = (
+  		<Navbar brand='React-Bootstrap' inverse toggleNavKey={0}>
+    			<Nav right eventKey={0}> {/* This is the eventKey referenced */}
+      				<NavItem eventKey={1} href='#'>Link</NavItem>
+      				<NavItem eventKey={2} href='#'>Link</NavItem>
+      					<DropdownButton eventKey={3} title='Dropdown'>
+        					<MenuItem eventKey='1'>Action</MenuItem>
+        					<MenuItem eventKey='2'>Another action</MenuItem>
+        					<MenuItem eventKey='3'>Something else here</MenuItem>
+        					<MenuItem divider />
+        					<MenuItem eventKey='4'>Separated link</MenuItem>
+      					</DropdownButton>
+    			</Nav>
+  		</Navbar>
+);
+	
+	React.render(navbarInstance, 
+		document.getElementById('content')
+		);
+
+/*		var CommentBox = React.createClass({
+			render: function(){
+			return (
+				<div className="commentBox">
+					<CommentList />
+					<CommentForm />
+					Hello World
+				</div>
+			);
+			}
+		});
+    	var Comment = React.createClass({
+		
+		render: function(){
+			return (
+
+				<div className = "comment">
+					<h2 className = "commentAuthor">
+						{this.props.author}
+					</h2>
+					{this.props.children}
+				</div>
+			);
+		}
+	});
+				
+	var CommentList = React.createClass({
+		render:function(){
+			return(
+				<div className="CommentList">
+					<Comment author = "tw3rp" children="hi"> this is one comment </Comment>
+//					<Comment children="Jordan Walke">This is *another* comment</Comment>
+					Hello, I am a CommentList
+				</div>
+			);
+			}
+		});
+	var CommentForm = React.createClass({
+		render:function(){
+			return(
+				<div className="commentForm">
+					Hello, I am a comment Form
+				</div>
+			)
+			}
+		});		
+
+	React.render(
+		<CommentBox />,
+	//	React.createElement(CommentBox, null),
+		document.getElementById('content')
+		
+	);
+*/	
+    </script>
+  </body>
+</html>
