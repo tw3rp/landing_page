@@ -11,6 +11,7 @@ var flash = require('connect-flash');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+require('./config/passport')(passport); 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -19,9 +20,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(bodyParser());//get info from html
 app.use(express.static(path.join(__dirname, 'public')));
+
 var pass = require('./routes/pass.js');
 var db = require('./config/db.js');
 var router= require('./config/routes.js');
+
 pass.setupPass(app);
 router.setupRoutes(app);
 
