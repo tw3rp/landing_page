@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="todo" >
+	<head>
+ 
+	
+		<link rel="stylesheet" type="text/css", href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/ >       
+	</head>
+<!-- name of the controller -->
+	<body ng-controller="mainController">
+
+		<script type="text/javascript", src="/node_modules/angular/angular.min.js" ></script>
+		<script type="text/javascript", src="/app.js"></script>
+		<h2> 
+		Welcome to your todo list!
+			<button class="btn btn-primary" type="button">
+ 				 Todos <span class="badge">{{todos.length}}</span>
+			</button> 
+		</h2>
+		<div id="todo-list" class="row">
+	            <div class="col-sm-4 col-sm-offset-4" align="center">
+			<ul class="list-group">
+        	        <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                		<div  ng-repeat="todo in todos">
+
+				<li class="list-group-item">	<button type="button" class="btn btn-danger" ng-click="deleteTodo(todo._id)">{{todo.todo}}</button></li>
+<!--				<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{todo.todo}}  {{todo.is_it_done}} -->
+
+         		       </div>
+			</ul>
+            		</div>
+        	</div>
+		<!-- to create a todo -->
+		<div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <input type="text" class="form-control input-lg text-center" placeholder="What do you want to do?" ng-model="formData.todo">
+                    </div>
+
+                    <!-- createToDo() WILL CREATE NEW TODOS -->
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+                </form>
+            </div>
+        </div>		
+		
+	</body>
+</html>
+
