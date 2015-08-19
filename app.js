@@ -5,9 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
+var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 // view engine setup
+var setup = require('./setup');
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
