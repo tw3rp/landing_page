@@ -7,12 +7,14 @@ var TODO = require('../models/userlist');
 var getTodos= function(res){
 			TODO.find({},function(err, todos) {
 			if (err) res.send(err);
-			res.json(todos); 
+			res.send(todos); 
 			});
 		};
 router.get('/todos', function(req,res){
 	TODO.find({},function(err,todos){
 		if(err) res.send(err);
+	//	res.setHeader('Content-Type', 'application/json');
+    	//	res.send({ a: "Rahul" });
 		getTodos(res);
 	});
 });
