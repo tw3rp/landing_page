@@ -26,10 +26,20 @@ router.post('/todos/create', function(req,res){
 		todo:req.body.todo,
 		is_it_done:false,
 		}, function(err,todos){
-			if(err) res.send("I am wrong");
+			if(err) res.send(err);
 			getTodos(res);
 		});
 	
+});
+
+router.post('/todos/create1',function(req,res){
+//for the app to just send the new todo item 
+	TODO.create({
+		todo:req.body.todo,
+		is_it_done:false,
+		}, function(err,todos){
+			if(err) res.send(err);
+		});
 });
 //This is the delete route which gets the id as the parameter from the angular front end $http post
 router.delete('/todos/delete/:todo_id',function(req,res){
