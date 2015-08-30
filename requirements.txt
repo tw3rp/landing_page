@@ -1,6 +1,8 @@
 altgraph==0.10.2
+backports.ssl-match-hostname==3.4.0.2
 bdist-mpkg==0.5.0
 bonjour-py==0.3
+certifi==2015.4.28
 cffi==1.2.1
 cryptography==1.0
 enum34==1.0.4
@@ -19,6 +21,7 @@ MarkupSafe==0.23
 matplotlib==1.3.1
 modulegraph==0.10.4
 ndg-httpsclient==0.4.0
+nose==1.3.7
 numpy==1.8.0rc1
 py2app==0.7.3
 pyasn1==0.1.8
@@ -68,6 +71,7 @@ scipy==0.13.0b1
 sendgrid==1.4.0
 six==1.9.0
 smtpapi==0.2.0
+tornado==4.2.1
 Twisted==13.2.0
 virtualenv==13.1.2
 Werkzeug==0.10.4
