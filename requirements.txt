@@ -1,4 +1,3 @@
 requests
 sendgrid
 virtualenv
-json
