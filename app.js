@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var pass = require('./routes/pass.js');
 var db = require('./config/db.js');
 var router= require('./config/routes.js');
-
+//hello
 pass.setupPass(app);
 router.setupRoutes(app);
 
