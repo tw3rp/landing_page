@@ -1,2 +1,2 @@
 web: npm start
-worker:python server.py
+worker: python server.py
