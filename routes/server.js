@@ -1,7 +1,7 @@
 var express=require('express');
 var net= require('net');
-var HOST= 'http://localhost';
-var port='6879';
+var HOST= 'redis://redistogo:5367ab1efbf1d3f3c33f022bd27a1fcf@tarpon.redistogo.com';
+var port='11120';
 
 
 var send = {sendEmail: function(jsonobj){
