@@ -1,6 +1,6 @@
 var express=require('express');
 var net= require('net');
-var HOST= 'http://127.0.0.1';
+var HOST= 'thawing-gorge-7176.herokuapp.com';
 var port='6879';
 
 
