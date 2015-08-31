@@ -46,5 +46,5 @@ def backup_email(email,subject,text,name):
   message.set_text(text)
   sg.send(message)
 if __name__ == '__main__':
-  server = MyTCPServer(('https://thawing-gorge-7176.herokuapp.com',6879),MyTCPServerHandler)
+  server = MyTCPServer(('http://localhost',6879),MyTCPServerHandler)
   server.serve_forever()
