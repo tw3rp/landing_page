@@ -5,12 +5,7 @@ import socket
 import json
 import requests
 import sendgrid
-import os
-import redis
-#ff
 
-redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6879')
-redis = redis.from_url(redis_url)
 class MyTCPServer(SocketServer.ThreadingTCPServer):
   allow_reuse_address=True
 class MyTCPServerHandler(SocketServer.BaseRequestHandler):
@@ -51,5 +46,5 @@ def backup_email(email,subject,text,name):
   message.set_text(text)
   sg.send(message)
 if __name__ == '__main__':
-  server = MyTCPServer((redis_url,6879),MyTCPServerHandler)
+  server = MyTCPServer(('127.0.0.1',6879),MyTCPServerHandler)
   server.serve_forever()
