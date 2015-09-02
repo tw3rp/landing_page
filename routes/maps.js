@@ -5,4 +5,5 @@ var path = require('path');
 router.get('/', function(req,res,next){
   res.sendFile('maps.html', {root:path.join(__dirname,'../public')});
 });
-  
+
+module.exports= router;
